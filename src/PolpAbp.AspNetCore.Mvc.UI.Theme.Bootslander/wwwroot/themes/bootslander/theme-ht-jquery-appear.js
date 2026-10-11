@@ -43,7 +43,7 @@
             var modifiedFn = function() {
                 t.appeared = true;
                 if (settings.one) {
-                    w.unbind('scroll', check);
+                    w.off('scroll', check);
                     var i = $.inArray(check, $.fn.appear.checks);
                     if (i >= 0)
                         $.fn.appear.checks.splice(i, 1);

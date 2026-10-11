@@ -1,5 +1,7 @@
 ﻿@using Microsoft.Extensions.Configuration
 @using Volo.Abp.AspNetCore.Mvc.AntiForgery
+@using Microsoft.Extensions.Options
+@using Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers
 @using Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook
 @using Volo.Abp.AspNetCore.Mvc.UI.Layout
 @using PolpAbp.AspNetCore.Mvc.UI.Bundling
@@ -14,6 +16,7 @@
 @inject IBrandingProvider BrandingProvider
 @inject IPageLayout PageLayout
 @inject IConfiguration Configuration
+@inject IOptions<AbpThemingOptions> ThemingOptions
 
 @{
     Layout = null;
@@ -78,6 +81,10 @@
     <title>@pageTitle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @if (!ThemingOptions.Value.BaseUrl.IsNullOrWhiteSpace())
+    {
+        <base href="@ThemingOptions.Value.BaseUrl" />
+    }
 
     <!-- favicon -->
     @if (!string.IsNullOrEmpty(favicon))
