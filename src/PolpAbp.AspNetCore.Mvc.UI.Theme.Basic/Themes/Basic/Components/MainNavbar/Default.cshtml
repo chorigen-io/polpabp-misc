@@ -2,7 +2,10 @@
 @using PolpAbp.AspNetCore.Mvc.UI.Themes.Basic.Components.Menu
 @using PolpAbp.AspNetCore.Mvc.UI.Themes.Basic.Components.Toolbar
 @using PolpAbp.AspNetCore.Mvc.UI.Themes.Basic.Components.MainNavbar
+@using Localization.Resources.AbpUi
+@using Microsoft.AspNetCore.Mvc.Localization
 
+@inject IHtmlLocalizer<AbpUiResource> L
 @model MainNavbarViewComponent.ViewModel
 @{
     var bgCls = "navbar-dark bg-dark";
@@ -15,7 +18,7 @@
         @(await Component.InvokeAsync<MainNavbarBrandViewComponent>())
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#main-navbar-collapse" aria-controls="main-navbar-collapse"
-                aria-expanded="false" aria-label="Toggle navigation">
+                aria-expanded="false" aria-label="@L["Navbar_ToggleNavigation"].Value">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navbar-collapse">
