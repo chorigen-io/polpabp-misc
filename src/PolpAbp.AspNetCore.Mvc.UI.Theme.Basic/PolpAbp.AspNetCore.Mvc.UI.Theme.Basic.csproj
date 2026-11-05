@@ -27,6 +27,8 @@
 	<ItemGroup>
 		<EmbeddedResource Include="Localization\PolpAbp\Theme\Basic\MultiTenancy\*.json" />
 		<Content Remove="Localization\PolpAbp\Theme\Basic\MultiTenancy\*.json" />
+		<EmbeddedResource Include="Localization\PolpAbp\Theme\Basic\Ui\*.json" />
+		<Content Remove="Localization\PolpAbp\Theme\Basic\Ui\*.json" />
 	</ItemGroup>
 
 	<ItemGroup>

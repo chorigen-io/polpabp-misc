@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Localization.Resources.AbpUi;
+using Microsoft.Extensions.DependencyInjection;
 using PolpAbp.AspNetCore.Mvc.UI.Bundling;
 using PolpAbp.AspNetCore.Mvc.UI.Themes.Basic.Toolbars;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
@@ -50,6 +51,9 @@ namespace PolpAbp.AspNetCore.Mvc.UI
                 options.Resources
                     .Get<AbpUiMultiTenancyResource>()
                     .AddVirtualJson("/Localization/PolpAbp/Theme/Basic/MultiTenancy");
+                options.Resources
+                    .Get<AbpUiResource>()
+                    .AddVirtualJson("/Localization/PolpAbp/Theme/Basic/Ui");
             });
 
             Configure<AbpToolbarOptions>(options =>
